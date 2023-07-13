@@ -1,0 +1,64 @@
+<!--&lt;!&ndash; register.html &ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Register</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Register</h1>-->
+<!--    <form action="{{ url_for('register') }}" method="POST">-->
+<!--        <label for="username">Username:</label>-->
+<!--        <input type="text" id="username" name="username" required><br><br>-->
+<!--        <label for="password">Password:</label>-->
+<!--        <input type="password" id="password" name="password" required><br><br>-->
+<!--        <label for="email">Email:</label>-->
+<!--        <input type="email" id="email" name="email" required><br><br>-->
+<!--        <input type="submit" value="Register">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HealBox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+<main class="main">
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul>
+        <li class=""><a href="/">Welcome</a></li>
+        <li class=""><a href="/login">Login</a></li>
+        <li class="active"><a href="/register">Register</a></li>
+<!--         <li><a href="#">Get In Touch</a></li> -->
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="twitter">
+    <div class="container">
+      <a target="_blank">
+        <img class="social" src="https://www.svgrepo.com/download/20675/open-cardboard-box.svg">
+      </a>
+      <p>Sign In</p>
+      {% if error%}
+    <p>{{error}}</p>
+    {% endif %}
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="username">Username:</label>
+        <input class="form__input" type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input class="form__input" type="password" id="password" name="password" required><br><br>
+        <label for="email">Email:</label>
+        <input class="form__input" type="email" id="email" name="email" required><br><br>
+        <input class="btn" type="submit" value="Register">
+    </form>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
+
